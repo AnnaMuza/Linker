@@ -35,7 +35,7 @@ export const Offers = () => {
         );
         const q = query(
           listingRef,
-          where("offer", "==", true),
+          where("offer", "==", userType === 'customer'),
           orderBy("timestamp", "desc"),
           limit(10)
         );
@@ -55,7 +55,7 @@ export const Offers = () => {
       }
     };
     fetchListings();
-  }, []);
+  }, [userType]);
 
   // Pagination Load More
   const onFetchMoreListings = async () => {
@@ -65,7 +65,7 @@ export const Offers = () => {
       );
       const q = query(
         listingRef,
-        where("offer", "==", true),
+        where("offer", "==", userType === 'customer'),
         orderBy("timestamp", "desc"),
         startAfter(lastFetchedListing),
         limit(10)

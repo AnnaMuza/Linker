@@ -24,7 +24,8 @@ export const Category = () => {
   const [lastFetchedListing, setLastFetchedListing] =
     useState<QueryDocumentSnapshot>();
 
-  const params = useParams();
+  const params = useParams().categoryName;
+  const category = params ? params.charAt(0).toUpperCase() + params.slice(1) : '';
 
   useEffect(() => {
     const fetchListings = async () => {
@@ -34,7 +35,7 @@ export const Category = () => {
         );
         const q = query(
           listingRef,
-          where("type", "==", params.categoryName),
+          where("type", "==", category),
           orderBy("timestamp", "desc"),
           limit(10)
         );
@@ -53,7 +54,7 @@ export const Category = () => {
       }
     };
     fetchListings();
-  }, [params.categoryName]);
+  }, [category]);
 
   // Pagination Load More
   const onFetchMoreListings = async () => {
@@ -63,7 +64,7 @@ export const Category = () => {
       );
       const q = query(
         listingRef,
-        where("type", "==", params.categoryName),
+        where("type", "==", category),
         orderBy("timestamp", "desc"),
         startAfter(lastFetchedListing),
         limit(10)
@@ -87,9 +88,7 @@ export const Category = () => {
     <div className="category">
       <header>
         <p className="pageHeader">
-          {params.categoryName === "rent"
-            ? "Places for rent"
-            : "Places for sale"}
+          {category}
         </p>
         <LogoIcon id="logo"/>
       </header>
@@ -115,7 +114,7 @@ export const Category = () => {
           )}
         </>
       ) : (
-        <p>No listings for {params.categoryName}</p>
+        <p>No matches for {params}</p>
       )}
     </div>
   );

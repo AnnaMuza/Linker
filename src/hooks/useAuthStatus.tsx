@@ -14,7 +14,6 @@ export const useAuthStatus = () => {
   const [userType, setUserType] = store.useState('user');
 
   useEffect(() => {
-    console.log(userType);
     const auth = getAuth();
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {

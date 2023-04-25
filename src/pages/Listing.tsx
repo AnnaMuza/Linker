@@ -148,7 +148,7 @@ export const Listing = () => {
               to={`/contact/${listing.userRef}?listingName=${listing.name}`}
               className="primaryButton"
             >
-              Contact Landlord
+              Contact user
             </Link>
           )}
         </div>
