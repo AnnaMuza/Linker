@@ -41,15 +41,15 @@ export const Navbar = () => {
               width="36"
               height="36"
             />
-            {userType && <p
+            <p
               className={
                 pathMatchRoute("/offers")
                   ? "navbarListItemNameActive"
                   : "navbarListItemName"
               }
             >
-              {userType === 'supplier' ? 'Requests' : 'Offers'}
-            </p>}
+              {userType ? (userType === 'supplier' ? 'Requests' : 'Offers') : 'Listings'}
+            </p>
           </li>
           <li className="navbarListItem" onClick={() => navigate("/profile")}>
             <PersonOutlineIcon

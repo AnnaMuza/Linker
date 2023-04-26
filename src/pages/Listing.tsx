@@ -86,25 +86,11 @@ export const Listing = () => {
 
       {listing && (
         <div className="listingDetails">
-          <p className="listingName">
-            {listing.name}
-            {/* ${listing.offer
-              ? listing.discountedPrice
-                  .toString()
-                  .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-              : listing.regularPrice
-                  .toString()
-                  .replace(/\B(?=(\d{3})+(?!\d))/g, ",")} */}
-          </p>
+          <p className="listingName">{listing.name}</p>
           <p className="listingLocation">{listing.location}</p>
-          {/* <p className="listingType">
-            For {listing.type === "rent" ? "Rent" : "Sale"}
-          </p>
-          {listing.offer && (
-            <p className="discountPrice">
-              ${listing.regularPrice - listing.discountedPrice} discount
-            </p>
-          )} */}
+          <p className="listingType">{listing.type}</p>
+          <p className="listingDescription">{listing.description}</p>
+
 
           {/* <ul className="listingDetailsList">
             <li>

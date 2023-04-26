@@ -25,7 +25,7 @@ export const Offers = () => {
     useState<QueryDocumentSnapshot>();
   const [isListedAll, setIsListedAll] = useState(true); // FIXME: when the last listing is fetched, set this to false
   const userType = store.useState('user')[0];
-  const value = userType === 'supplier' ? 'requests' : 'offers';
+  const value = userType ? (userType === 'supplier' ? 'requests' : 'offers') : 'listings';
 
   useEffect(() => {
     const fetchListings = async () => {
@@ -33,18 +33,22 @@ export const Offers = () => {
         const listingRef = collection(db, "listings").withConverter(
           listingsItemConverter
         );
-        const q = query(
-          listingRef,
-          where("offer", "==", userType === 'customer'),
-          orderBy("timestamp", "desc"),
-          limit(10)
-        );
+        let q;
+        if (userType) {
+          q = query(
+            listingRef,
+            where("offer", "==", userType === 'customer'),
+            orderBy("timestamp", "desc"),
+            limit(10));
+        } else {
+          q = query(
+            listingRef,
+            orderBy("timestamp", "desc"),
+            limit(10));
+        }
         const querySnap = await getDocs(q);
-
         const lastVisible = querySnap.docs[querySnap.docs.length - 1];
-
         setLastFetchedListing(lastVisible);
-
         const listings = querySnap.docs.map((doc) => doc.data());
 
         setListings(listings);

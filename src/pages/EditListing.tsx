@@ -190,6 +190,10 @@ export const EditListing = () => {
     formData.type = e.value;
   };
 
+  const getType = () => {
+    return formData.type;
+  };
+
   const handleChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const fileList = e.target.files;
     if (!fileList) return;
@@ -254,6 +258,7 @@ export const EditListing = () => {
           formData={formData}
           onMutate={onMutate}
           onDropdown={onDropdown}
+          getType={getType}
           onSubmit={onSubmit}
           handleChange={handleChange}
           handleUpload={handleUpload}

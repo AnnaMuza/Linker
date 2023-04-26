@@ -11,6 +11,7 @@ type PropsType = {
       React.MouseEvent<HTMLButtonElement>
   ) => void;
   onDropdown: (e: Option) => void;
+  getType: () => string;
   handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   handleUpload: (e: React.MouseEvent<HTMLButtonElement>) => void;
   handleDeleteImage: (e: React.MouseEvent<HTMLButtonElement>) => void;
@@ -26,6 +27,7 @@ export const ListingForm = ({
   onSubmit,
   onMutate,
   onDropdown,
+  getType,
   handleChange,
   handleUpload,
   handleDeleteImage,
@@ -61,7 +63,7 @@ export const ListingForm = ({
       <Dropdown
         options={categories}
         onChange={onDropdown}
-        value={categories[0]}
+        value={getType()}
         placeholder="Select a category"
       />
 
