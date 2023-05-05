@@ -53,13 +53,13 @@ export const Navbar = () => {
           </li>
           <li className="navbarListItem" onClick={() => navigate("/profile")}>
             <PersonOutlineIcon
-              fill={pathMatchRoute("/profile") ? "#2c2c2c" : "#8f8f8f"}
+              fill={pathMatchRoute("/profile") || pathMatchRoute("/sign-in") || pathMatchRoute("/sign-up") ? "#2c2c2c" : "#8f8f8f"}
               width="36"
               height="36"
             />
             <p
               className={
-                pathMatchRoute("/profile")
+                pathMatchRoute("/profile") || pathMatchRoute("/sign-in") || pathMatchRoute("/sign-up")
                   ? "navbarListItemNameActive"
                   : "navbarListItemName"
               }

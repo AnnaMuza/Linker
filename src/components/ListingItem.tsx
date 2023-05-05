@@ -1,16 +1,17 @@
 import { Link } from "react-router-dom";
 import { ReactComponent as DeleteIcon } from "../assets/svg/deleteIcon.svg";
 import { ReactComponent as EditIcon } from "../assets/svg/editIcon.svg";
-// import bedIcon from "../assets/svg/bedIcon.svg";
-// import bathtubIcon from "../assets/svg/bathtubIcon.svg";
+import fireIcon from "../assets/svg/fire.svg";
 import { ListingsItemType } from "../type";
+
 type PropsType = {
   listing: ListingsItemType;
   onEdit?: (id: string) => void;
   onDelete?: (id: string, name: string) => void;
+  notLogged?: boolean;
 };
 
-export const ListingItem = ({ listing, onEdit, onDelete }: PropsType) => {
+export const ListingItem = ({ listing, onEdit, onDelete, notLogged }: PropsType) => {
   return (
     <li className="categoryListing">
       <Link
@@ -24,34 +25,14 @@ export const ListingItem = ({ listing, onEdit, onDelete }: PropsType) => {
         />
 
         <div className="categoryListingDetails">
+          {notLogged && <p className="listingType">{listing.data.offer ? 'offer' : 'request'}</p>}
+          {listing.data.timeBound && <img
+            src={fireIcon}
+            alt={listing.data.timeBound ? 'hot' : ''}
+            className="categoryListingFire"
+          />}
           <p className="categoryListingLocation">{listing.data.location}</p>
           <p className="categoryListingName">{listing.data.name}</p>
-
-          {/* <p className="categoryListingPrice">
-            $
-            {listing.data.offer
-              ? listing.data.discountedPrice
-                  .toString()
-                  .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-              : listing.data.regularPrice
-                  .toString()
-                  .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
-            {listing.data.type === "rent" && " / Month"}
-          </p>
-          <div className="categoryListingInfoDiv">
-            <img src={bedIcon} alt="bed" />
-            <p className="categoryListingInfoText">
-              {listing.data.bedrooms > 1
-                ? `${listing.data.bedrooms} Bedrooms`
-                : "1 Bedroom"}
-            </p>
-            <img src={bathtubIcon} alt="bath" />
-            <p className="categoryListingInfoText">
-              {listing.data.bathrooms > 1
-                ? `${listing.data.bathrooms} Bathrooms`
-                : "1 Bathroom"}
-            </p> */}
-          {/* </div> */}
         </div>
       </Link>
 

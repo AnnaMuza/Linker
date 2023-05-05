@@ -100,7 +100,7 @@ export const Category = () => {
           <main>
             <ul className="categoryListings">
               {listings.map((listing) => (
-                <ListingItem key={listing.id} listing={listing} />
+                <ListingItem key={listing.id} listing={listing} notLogged={true} />
               ))}
             </ul>
           </main>

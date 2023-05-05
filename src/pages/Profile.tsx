@@ -15,7 +15,7 @@ import { getStorage, ref, deleteObject } from "firebase/storage";
 import { db } from "../firebase.config";
 import { toast } from "react-toastify";
 import arrowRight from "../assets/svg/keyboardArrowRightIcon.svg";
-import homeIcon from "../assets/svg/homeIcon.svg";
+import homeIcon from "../assets/svg/localOfferIcon.svg";
 import { ReactComponent as LogoIcon } from "../assets/svg/logo.svg";
 import { listingsItemConverter } from "../utils";
 import { ListingsItemType } from "../type";

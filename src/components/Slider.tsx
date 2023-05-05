@@ -70,8 +70,7 @@ export const Slider = () => {
             >
               <p className="swiperSlideText">{data.name}</p>
               <p className="swiperSlidePrice">
-                {/* ${data.discountedPrice ?? data.regularPrice}{" "} */}
-                {data.type === "rent" && "/ month"}
+                {data.offer ? 'offer' : 'request'}
               </p>
             </div>
           </SwiperSlide>

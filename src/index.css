@@ -1,5 +1,6 @@
 :root {
   --main-color: #5737BF;
+  --max-filed-w: 700px;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap");
@@ -59,6 +60,19 @@ header {
   font-weight: 500;
 }
 
+.dialog {
+  width: 24em;
+}
+
+.dialog-button {
+  text-transform: uppercase;
+  margin: auto !important;
+}
+
+.p-dialog-header-close {
+  display: none !important;
+}
+
 .Dropdown-control {
   padding: 0.9rem 3rem;
   background-color: #ffffff;
@@ -72,7 +86,7 @@ header {
   outline: none !important;
   padding: 0.9rem 1rem !important;
   width: 90%;
-  max-width: 326px;
+  max-width: var(--max-filed-w);
 }
 
 .Dropdown-menu {
@@ -81,7 +95,8 @@ header {
   border-radius: 1rem !important;
   font-size: 1rem;
   width: 90%;
-  max-width: 326px;
+  max-width: var(--max-filed-w);
+  text-align: center;
 }
 
 .Dropdown-arrow {
@@ -425,7 +440,7 @@ header {
   color: #000000;
   position: absolute;
   top: 143px;
-  left: 11px;
+  left: 7px;
   font-weight: 600;
   max-width: 90%;
   background-color: #ffffff;
@@ -498,6 +513,12 @@ header {
   }
 }
 
+.categoryListingFire {
+  height: 21px;
+  display: inline;
+  vertical-align: top;
+}
+
 .categoryListingDetails {
   width: 65%;
 }
@@ -512,7 +533,7 @@ header {
   font-size: 0.7rem;
   opacity: 0.8;
   margin-bottom: 0;
-  margin-top: 1.4rem;
+  /* margin-top: 1.4rem; */
 }
 
 .categoryListingName {
@@ -600,7 +621,7 @@ header {
   outline: none;
   padding: 0.9rem 1rem;
   width: 90%;
-  max-width: 326px;
+  max-width: var(--max-filed-w);
 }
 
 .discountPrice {
@@ -621,7 +642,7 @@ header {
   display: inline;
   font-weight: 600;
   font-size: 0.8rem;
-  margin-right: 1rem;
+  margin-right: 0.3rem;
 }
 
 .listingDetailsList {
@@ -861,13 +882,13 @@ header {
 .formInputName {
   padding: 0.9rem 1rem;
   width: 90%;
-  max-width: 326px;
+  max-width: var(--max-filed-w);
 }
 
 .formInputAddress {
   padding: 0.9rem 1rem;
   width: 90%;
-  max-width: 326px;
+  max-width: var(--max-filed-w);
 }
 
 .formPriceDiv {
