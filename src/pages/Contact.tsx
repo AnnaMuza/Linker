@@ -42,7 +42,7 @@ export const Contact = () => {
   return (
     <div className="pageContainer">
       <header>
-        <p className="pageHeader">Contact Landlord</p>
+        <p className="pageHeader">Contact</p>
         <LogoIcon id="logo"/>
       </header>
 

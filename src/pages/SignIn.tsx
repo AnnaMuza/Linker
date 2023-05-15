@@ -52,7 +52,7 @@ export const SignIn = () => {
           <LogoIcon id="logo"/>
         </header>
 
-        <form onSubmit={onSubmit}>
+        <form className="form" onSubmit={onSubmit}>
           <input
             type="email"
             className="emailInput"

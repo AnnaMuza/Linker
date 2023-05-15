@@ -98,7 +98,7 @@ export const SignUp = () => {
           <LogoIcon id="logo"/>
         </header>
 
-        <form onSubmit={onSubmit}>
+        <form className="form" onSubmit={onSubmit}>
         <label className="formLabel">Account type</label>
           <div className="formButtons">
             <button

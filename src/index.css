@@ -1,6 +1,6 @@
 :root {
   --main-color: #5737BF;
-  --max-filed-w: 700px;
+  --max-filed-w: 77vh;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap");
@@ -36,7 +36,8 @@ header {
 }
 
 #root {
-  min-height: calc(100vh + 85px);
+  min-height: 100vh;
+  margin-bottom: 85px;
 }
 
 #logo {
@@ -105,6 +106,10 @@ header {
   top: auto !important;
 }
 
+.form {
+  display: grid;
+}
+
 .input,
 .passwordInput,
 .emailInput,
@@ -116,6 +121,7 @@ header {
   border-radius: 3rem;
   height: 3rem;
   width: 100%;
+  max-width: var(--max-filed-w);
   outline: none;
   font-family: "Montserrat", sans-serif;
   padding: 0 3rem;
@@ -145,7 +151,7 @@ header {
   color: #ffffff;
   font-weight: 600;
   font-size: 1.25rem;
-  width: 80%;
+  width: 30vh;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -164,6 +170,11 @@ header {
   top: -3.4%;
   right: 20px;
 }
+
+/* .pageCentered {
+  max-width: var(--max-filed-w);
+  margin: auto !important;
+} */
 
 .pageContainer,
 .offers,
@@ -279,18 +290,19 @@ header {
 
 .passwordInputDiv {
   position: relative;
+  max-width: var(--max-filed-w);
 }
 
 .passwordInput {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   background: url("./assets/svg/lockIcon.svg") #ffffff 2.5% center no-repeat;
 }
 
 .showPassword {
   cursor: pointer;
   position: absolute;
-  top: -4%;
-  right: 1%;
+  margin-left: -53px;
+  margin-top: -3px;
   padding: 1rem;
 }
 
@@ -299,15 +311,21 @@ header {
   color: var(--main-color);
   font-weight: 600;
   text-align: right;
+  padding-right: 10px;
+  float: right;
+  height: 77px;
+  width: 50%;
 }
 
 .signInBar,
 .signUpBar {
-  margin-top: 3rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: inherit;
+  float: left;
+  width: 50%;
+  padding-left: 10px;
 }
 
 .signInButton,
@@ -338,19 +356,26 @@ header {
   height: 3rem;
   background-color: var(--main-color);
   border-radius: 50%;
+  margin-left: 1rem;
+  margin-right: auto;
 }
 @media (min-width: 1024px) {
   .signInButton,
   .signUpButton {
-    margin-left: 3rem;
+    margin-left: 1rem;
   }
 }
 
 .socialLogin {
-  margin-top: 4rem;
+  /* margin-top: 4rem; */
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* width: 100%; */
+  min-width: 200px;
+  max-width: var(--max-filed-w);
+  /* margin: auto; */
+  padding-top: 1rem;
 }
 
 .socialIconDiv {
@@ -372,11 +397,12 @@ header {
 }
 
 .registerLink {
-  margin-top: 4rem;
+  margin-top: 1rem;
   color: var(--main-color);
   font-weight: 600;
   text-align: center;
-  margin-bottom: 3rem;
+  padding-bottom: 3rem;
+  max-width: var(--max-filed-w);
 }
 
 @media (min-width: 1217px) {
@@ -476,7 +502,7 @@ header {
 }
 
 .category {
-  margin-bottom: 10rem;
+  margin-bottom: 8rem;
 }
 
 .listingsList {
@@ -566,7 +592,7 @@ header {
 .loadMore {
   cursor: pointer;
   width: 8rem;
-  margin: 0 auto;
+  margin: 1rem auto;
   text-align: center;
   padding: 0.25rem 0.5rem;
   background-color: #000000;
@@ -574,7 +600,6 @@ header {
   font-weight: 600;
   border-radius: 1rem;
   opacity: 0.7;
-  margin-top: 2rem;
 }
 
 .listingDetails {
@@ -615,8 +640,8 @@ header {
   font-size: 1rem;
   margin: 0.5rem 0.5rem 0 0;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  /* justify-content: center; */
+  /* align-items: center; */
   border: none;
   outline: none;
   padding: 0.9rem 1rem;
@@ -746,7 +771,7 @@ header {
 .profileDetailsHeader {
   display: flex;
   justify-content: space-between;
-  max-width: 500px;
+  max-width: var(--max-filed-w);
 }
 
 .personalDetailsText {
@@ -768,7 +793,7 @@ header {
   border-radius: 1rem;
   padding: 1rem;
   box-shadow: rgba(0, 0, 0, 0.2);
-  max-width: 500px;
+  max-width: var(--max-filed-w);
 }
 
 .profileDetails {
@@ -812,7 +837,7 @@ header {
   box-shadow: rgba(0, 0, 0, 0.2);
   margin-top: 2rem;
   font-weight: 600;
-  max-width: 500px;
+  max-width: var(--max-filed-w);
   display: flex;
   justify-content: space-between;
   align-items: center;
